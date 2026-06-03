@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>韦特塔罗牌占卜</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>✦ 韦特塔罗牌 ✦</h1>
+            <p class="subtitle">探索命运的指引</p>
+        </header>
+
+        <div class="preparation-guide">
+            <div class="guide-text">
+                <p><strong>准备开始占卜：</strong></p>
+                <p>在开始之前，请先让自己平静下来，深呼吸几次，放松身心。</p>
+                <p>闭上眼睛，想象你要咨询的问题，让思绪沉淀下来。</p>
+            </div>
+            
+            <div class="question-area">
+                <label for="userQuestion">你的问题（可选）：</label>
+                <textarea id="userQuestion" placeholder="例如：我的事业发展如何？这段关系的未来会怎样？我应该做出什么选择？"></textarea>
+            </div>
+        </div>
+
+        <div class="spread-selector">
+            <h2>选择牌阵</h2>
+            <div class="spread-options">
+                <button class="spread-btn active" data-spread="single">
+                    <span class="spread-name">单张牌</span>
+                    <span class="spread-desc">简单指引</span>
+                </button>
+                <button class="spread-btn" data-spread="three">
+                    <span class="spread-name">三张牌</span>
+                    <span class="spread-desc">过去·现在·未来</span>
+                </button>
+                <button class="spread-btn" data-spread="cross">
+                    <span class="spread-name">凯尔特十字</span>
+                    <span class="spread-desc">深度解读</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="mode-selector">
+            <h2>选择抽牌方式</h2>
+            <div class="mode-options">
+                <button class="mode-btn active" data-mode="random">
+                    <span class="mode-name">随机抽牌</span>
+                    <span class="mode-desc">系统随机选择</span>
+                </button>
+                <button class="mode-btn" data-mode="manual">
+                    <span class="mode-name">手动选择</span>
+                    <span class="mode-desc">点击背面翻牌</span>
+                </button>
+                <button class="mode-btn" data-mode="number">
+                    <span class="mode-name">数字选牌</span>
+                    <span class="mode-desc">洗牌后按号选</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="shuffle-area" id="shuffleArea">
+            <button class="shuffle-btn" id="shuffleBtn">
+                <span class="shuffle-icon">🔀</span>
+                <span class="shuffle-text">洗牌</span>
+            </button>
+            <p class="shuffle-hint" id="shuffleHint">点击洗牌开始</p>
+        </div>
+
+        <div class="action-area" id="actionArea">
+            <button class="draw-btn" id="drawBtn">
+                <span class="btn-text">开始抽牌</span>
+            </button>
+        </div>
+
+        <div class="manual-selector" id="manualSelector">
+            <h3>选择塔罗牌 <span class="selected-info">（已选: <span id="selectedCount">0</span>/<span id="totalNeeded">1</span>）</span></h3>
+            <div class="card-grid" id="cardGrid"></div>
+        </div>
+
+        <div class="number-selector" id="numberSelector">
+            <h3>输入洗牌后的序号</h3>
+            <p class="number-hint">洗牌后每张牌都有随机序号(1-78)，输入序号选择</p>
+            <div class="number-inputs" id="numberInputs"></div>
+            <button class="confirm-btn" id="confirmNumberBtn">确认选择</button>
+        </div>
+
+        <div class="cards-container" id="cardsContainer"></div>
+
+        <div class="reading-panel" id="readingPanel">
+            <div class="reading-content" id="readingContent"></div>
+        </div>
+    </div>
+
+    <script src="tarot-data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
